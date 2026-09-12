@@ -116,7 +116,8 @@ v1 seed masters + bible head (MIMOCODE/Goalmode_Cards lineage, private) → mast
 | bridge laws | `node deploy/battery/bridge-tests.mjs` | 10/10 PASS |
 | smoke | `node machinery/run-smoke.mjs .` | `{"ok": true, "checked": 5}` exit 0 |
 | deploy | `node deploy/battery/deploy-proof.mjs` | 8/8 files + SMOKE-IN-TARGET {ok:true} exit 0 |
-| secrets | `grep -rn 'ghp_' .` | (measured: CLEAN — no live token shapes) |
+| secrets | `grep -rEn 'ghp_[A-Za-z0-9]{20,}' .` | CLEAN — no live token shapes |
+| clean-clone boot | `git clone <public url>` + full battery in clone | validator 6/6 · bridge 10/10 · smoke {"ok": true} · deploy proof PASS · secrets CLEAN (tool-result tokens @ 5d0f987) |
 | docs floors | `wc -l docs/*.md` | see DOCS FLOORS note below |
 | commit | `git log --oneline -1` | 9800653 fix(contract) — main |
 | remote | `git remote -v` | origin = github.com/leviathan-devops/goalmode-cards (clean URL, no creds) |
