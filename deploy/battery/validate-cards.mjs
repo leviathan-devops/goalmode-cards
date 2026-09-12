@@ -26,7 +26,7 @@ function check(path, text) {
     if (!new RegExp(`^${k}`, 'm').test(f)) errs.push(`frontmatter missing ${k}`);
   const family = (f.match(/^card:\s*(\S+)/m) || [])[1];
   if (family === 'goalmode-v1') {
-    const unfenced = text.replace(/```[\s\S]*?```/g, '');   // C3: fences never satisfy section presence
+    const unfenced = text.replace(/```[\s\S]*?```/g, '').replace(/```[\s\S]*$/, '');   // C3: fences (closed or unclosed) never satisfy section presence
     for (const s of ['## §0', '## §1', '## §2', '## §3', '## §4', '## §5', '## §6'])
       if (!unfenced.includes(s)) errs.push(`missing section ${s}`);
     const sec0 = unfenced.split('## §0')[1]?.split('## §1')[0] || '';
@@ -39,7 +39,7 @@ function check(path, text) {
     if (!/^\s*name:\s*"(\[FILL[^\]]*\]|[A-Za-z0-9._-]+)"/m.test(f)) errs.push('meta.name missing or bad charset');
     if (!/^\s*description:\s*\S/m.test(f)) errs.push('meta.description missing');
     const code = text.replace(/^---[\s\S]*?---/, '');   // C2: export must live in code, not prose
-    if (!/^export default async function/m.test(code)) errs.push('no default export');
+    if (!/^export default async function\s*\(/m.test(code)) errs.push('no default export');
   } else if (family === 'compose-function-v1') {
     if (!/^function:/m.test(f)) errs.push('function: missing');
     if (!/micro_loop:|phases:|contract/.test(text)) errs.push('no contract body');
