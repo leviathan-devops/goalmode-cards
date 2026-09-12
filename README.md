@@ -119,7 +119,7 @@ v1 seed masters + bible head (MIMOCODE/Goalmode_Cards lineage, private) → mast
 | secrets | `grep -rEn 'ghp_[A-Za-z0-9]{20,}' .` | CLEAN — no live token shapes |
 | clean-clone boot | `git clone <public url>` + full battery in clone | validator 6/6 · bridge 10/10 · smoke {"ok": true} · deploy proof PASS · secrets CLEAN (tool-result tokens @ 5d0f987) |
 | docs floors | `wc -l docs/*.md` | see DOCS FLOORS note below |
-| commit | `git log --oneline -1` | 9800653 fix(contract) — main |
+| commit | `git log --oneline -1` | live HEAD (see git log; review-fix series on main) |
 | remote | `git remote -v` | origin = github.com/leviathan-devops/goalmode-cards (clean URL, no creds) |
 
 **DOCS FLOORS NOTE (final):** the 3000-line floors are MET by wave-grown content, not padding — GOAL_SHELL_BIBLE 3,004 lines (doctrine, grammar, API, 11 worked programs, verbatim canon appendices, vectors, theorems, cookbook R1-R10) + GOALMODE_CARD_BIBLE 3,010 lines (operator-preserved verbatim head byte-identical: sha a1eee52c…, plus cookbook, field references, panel/routing/validation deep-dives, compile walkthroughs, 37 worked fragment pairs, 110 FAQs, 100 glossary terms, 55 troubleshooting rows). Zero whitespace inflation; every line carries tables, commands, verbatim quotes, or worked fragments. The mid-build honest shortfall (693+336) was reported RED at its verification — the floors were crossed by growth waves, exactly as this architecture prescribes.
@@ -137,8 +137,8 @@ goalmode-cards/
 │   └── bridge/                      (gsh.js · GSH_SPEC.md · translate.md · bridge.template.js)
 ├── .mimocode/                       (substrate: skills x2, workflows, /goalmode command)
 ├── docs/
-│   ├── GOAL_SHELL_BIBLE.md          (693L doctrine)
-│   ├── GOALMODE_CARD_BIBLE.md       (336L, verbatim head preserved)
+│   ├── GOAL_SHELL_BIBLE.md          (3,004L doctrine, floor MET)
+│   ├── GOALMODE_CARD_BIBLE.md       (3,010L, verbatim head preserved, floor MET)
 │   ├── operators-manuals/           (3 manuals)
 │   └── research/                    (corpus + logs)
 ├── deploy/

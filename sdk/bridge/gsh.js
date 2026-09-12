@@ -11,9 +11,9 @@ export function exit(ok, extra = {}) {       // exit code as data
 }
 export function exportVar(k, v) { env[k] = v; return env[k]; } // export VAR=v
 
-// seq a; b            — order preserved, later sees earlier's effects
+// seq a; b            — shell `a; b`: b runs UNCONDITIONALLY; result is b's
 export function seq(a, b) {
-  return async () => { const r = await a(); return r && r.ok === false ? r : b(); };
+  return async () => { await a(); return b(); };
 }
 // and a && b          — b skipped when a fails (short-circuit law)
 export function and(a, b) {
