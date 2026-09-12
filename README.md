@@ -22,7 +22,7 @@
 ## QUICKSTART (stock settings, no plugins)
 
 ```bash
-git clone https://github.com/<owner>/goalmode-cards && cd goalmode-cards
+git clone https://github.com/leviathan-devops/goalmode-cards && cd goalmode-cards
 # launch your TUI here — .mimocode/ hot-loads the skills, workflows, /goalmode command
 node deploy/battery/validate-cards.mjs cards/   # PASS count 6, FAIL count 0
 node machinery/run-smoke.mjs .                  # {"ok": true}
@@ -116,10 +116,10 @@ v1 seed masters + bible head (MIMOCODE/Goalmode_Cards lineage, private) → mast
 | bridge laws | `node deploy/battery/bridge-tests.mjs` | 10/10 PASS |
 | smoke | `node machinery/run-smoke.mjs .` | `{"ok": true, "checked": 5}` exit 0 |
 | deploy | `node deploy/battery/deploy-proof.mjs` | 8/8 files + SMOKE-IN-TARGET {ok:true} exit 0 |
-| secrets | `grep -rn 'ghp_' .` | (run at ship; must be empty) |
+| secrets | `grep -rn 'ghp_' .` | (measured: CLEAN — no live token shapes) |
 | docs floors | `wc -l docs/*.md` | see DOCS FLOORS note below |
-| commit | `git log --oneline -1` | (set at ship) |
-| remote | `git remote -v` | (public goalmode-cards) |
+| commit | `git log --oneline -1` | 9800653 fix(contract) — main |
+| remote | `git remote -v` | origin = github.com/leviathan-devops/goalmode-cards (clean URL, no creds) |
 
 **DOCS FLOORS NOTE (honest):** the goal contract set a 3000-line floor per bible. The v1 doctrine's honest mass is 693 (GOAL_SHELL_BIBLE) + 336 (GOALMODE_CARD_BIBLE, verbatim head preserved). We ship the honest counts rather than pad — padding is the one crime this architecture exists to prevent. Growth path: bibles absorb each future build wave's lessons (they are structured for it); the floor is expected to be crossed by v2's expanded surface, not by filler.
 
@@ -149,7 +149,7 @@ goalmode-cards/
 
 ## WHAT'S NEEDED FROM THE OPERATOR
 1. Rotate the GitHub PAT used at push (it transited chat — treat as burned).
-2. Replace `<owner>` in the clone URL with the actual account.
+2. Replace `leviathan-devops` in the clone URL with the actual account.
 3. Pin real goals: `/goal Drive to completion using the Goalmode Card at cards/<yours>.md — the card IS the contract (read §0, build to it).`
 
 ## LICENSE
